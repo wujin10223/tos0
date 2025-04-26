@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<script>
+const numbers = [
+  "447849919950",
+  "447719465845",
+  "447849920353",
+  "447719465847",
+  "447849920480",
+  "447719468267"
+];
+let lastIndex = localStorage.getItem('waIndex') || -1;
+lastIndex = (parseInt(lastIndex) + 1) % numbers.length;
+localStorage.setItem('waIndex', lastIndex);
+window.location.href = `https://api.whatsapp.com/send?phone=${numbers[lastIndex]}`;
+</script>
+</html>
